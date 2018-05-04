@@ -17,11 +17,14 @@
 </head>
 <body>
  <script>
- if (navigator.userAgent.match(/iPhone|iPad|iPod|Android/i)) {
+ if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
  window.location.replace("http://itworldcup.global/itworldcup2018.pdf");
 }
-else {
- document.body.innerHTML += '<object data="itworldcup2018.pdf" type="application/pdf" width="100%" height="100%"><p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="itworldcup2018.pdf">Download PDF</a>.</p></object>';
+ else if (navigator.userAgent.match(/Android/i)) {
+window.location.replace("https://drive.google.com/viewerng/viewer?embedded=true&url=http://itworldcup.global/itworldcup2018.pdf");
+ }
+ else {
+document.body.innerHTML += '<object data="itworldcup2018.pdf" type="application/pdf" width="100%" height="100%"><p><b>Example fallback content</b>: This browser does not support PDFs. Please download the PDF to view it: <a href="itworldcup2018.pdf">Download PDF</a>.</p></object>';
 }
  </script>
  </body>
